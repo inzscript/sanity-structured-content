@@ -1,0 +1,30 @@
+.header {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.cookieConsent {
+  position: relative;
+  z-index: 2;
+}
+
+@media (--medium-up) {
+  .header {
+    position: sticky;
+    top: 0;
+    left: 0;
+  }
+
+  .header.onFrontPage {
+    position: fixed;
+    transform: translateY(
+      calc(-100% - 6px)
+    ); /* 6px for the header box shadow */
+    transition: transform 0.5s cubic-bezier(0.25, 0.92, 0.37, 1);
+  }
+
+  .header.onFrontPage.scrolledDown {
+    transform: translateY(0%);
+  }
+}

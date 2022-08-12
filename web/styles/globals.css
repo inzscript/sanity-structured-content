@@ -1,0 +1,123 @@
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  src: url(/static/fonts/inter-var-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'National 2 Narrow';
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url('/static/fonts/national-2-narrow-bold.woff2') format('woff2');
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-brand-black);
+}
+
+body {
+  margin: 0;
+  font: var(--font-body-base);
+  letter-spacing: var(--letter-spacing-body-base);
+  /* Intentionally using only the non-standard prefixed properties, because
+   * this is a workaround for a Mac-only issue. Requested by designer
+   * (globally, not just for light-on-dark special cases, of which we currently
+   * have none).
+   */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body.main-menu-open {
+  overflow: hidden;
+}
+
+h1 {
+  font: var(--font-display-base);
+  letter-spacing: normal;
+  margin: 0;
+}
+
+h2 {
+  font: var(--font-display-xs);
+  letter-spacing: normal;
+  margin: 80px 0 18px;
+}
+
+h3 {
+  font: var(--font-body-base-bold);
+  letter-spacing: normal;
+  margin: 1em 0;
+}
+
+p,
+ul,
+ol {
+  margin: 0 0 1em;
+}
+
+address {
+  margin: 0 0 1em;
+  font: inherit;
+}
+
+ul {
+  padding-left: 1.5em;
+  list-style-type: disc;
+}
+
+a {
+  color: var(--color-brand-black);
+  text-decoration: underline;
+}
+
+button,
+input {
+  color: var(--color-brand-black);
+  font: inherit;
+}
+
+@media (--medium-up) {
+  body {
+    font: var(--font-body-large);
+    letter-spacing: var(--letter-spacing-body-large);
+  }
+
+  body.main-menu-open {
+    overflow: auto;
+  }
+
+  h1 {
+    font: var(--font-display-xl);
+  }
+
+  h2 {
+    font: var(--font-display-base);
+    margin: 96px 0 30px;
+  }
+
+  h3 {
+    font: var(--font-body-large-bold);
+  }
+}
+
+@media (--large-up) {
+  h1 {
+    font: var(--font-display-2xl);
+  }
+
+  h2 {
+    margin-top: 128px;
+  }
+}

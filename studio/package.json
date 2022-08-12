@@ -1,0 +1,44 @@
+{
+  "name": "structured-content-conf-studio",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "package.json",
+  "author": "Knut Melvær <knut@sanity.io>",
+  "license": "UNLICENSED",
+  "scripts": {
+    "dev": "sanity start",
+    "start": "sanity start",
+    "build": "sanity build"
+  },
+  "keywords": [
+    "sanity"
+  ],
+  "dependencies": {
+    "@portabletext/react": "^1.0.3",
+    "@sanity/base": "^2.28.2",
+    "@sanity/core": "^2.28.1",
+    "@sanity/default-layout": "^2.28.2",
+    "@sanity/default-login": "^2.28.2",
+    "@sanity/desk-tool": "^2.28.2",
+    "@sanity/hierarchical-document-list": "^1.0.0",
+    "@sanity/production-preview": "^2.15.0",
+    "@sanity/vision": "^2.28.2",
+    "date-fns": "^2.28.0",
+    "prop-types": "^15.7",
+    "react": "^17.0",
+    "react-dom": "^17.0",
+    "sanity-plugin-asset-source-unsplash": "^0.1.5",
+    "sanity-plugin-documents-pane": "^1.0.5",
+    "sanity-plugin-iframe-pane": "^1.0.15",
+    "sanity-plugin-leaflet-input": "^1.0.1",
+    "sanity-plugin-media": "^1.4.4",
+    "sanity-plugin-social-preview": "^0.1.5",
+    "styled-components": "^5.2.0",
+    "timezones-list": "^3.0.1"
+  },
+  "devDependencies": {
+    "@sanity/cli": "^2.28.0",
+    "typescript": "^4.5.5"
+  }
+}

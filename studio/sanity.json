@@ -1,0 +1,47 @@
+{
+  "root": true,
+  "project": {
+    "name": "structured-content-conf"
+  },
+  "api": {
+    "projectId": "33zsuc7i",
+    "dataset": "production"
+  },
+  "plugins": [
+    "@sanity/base",
+    "@sanity/default-layout",
+    "@sanity/default-login",
+    "@sanity/desk-tool",
+    "asset-source-unsplash",
+    "leaflet-input",
+    "media",
+    "iframe-pane",
+    "documents-pane",
+    "@sanity/hierarchical-document-list",
+    "@sanity/production-preview",
+    "@sanity/vision",
+    "social-preview",
+    "structured-content-logo"
+  ],
+  "parts": [
+    {
+      "name": "part:@sanity/base/schema",
+      "path": "./schemas/schema"
+    },
+    {
+      "name": "part:@sanity/desk-tool/structure",
+      "path": "./src/deskStructure.ts"
+    },
+    {
+      "implements": "part:@sanity/production-preview/resolve-production-url",
+      "path": "./src/resolveProductionUrl.ts"
+    }
+  ],
+  "env": {
+    "development": {
+      "api": {
+        "dataset": "staging"
+      }
+    }
+  }
+}

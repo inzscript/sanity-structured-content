@@ -1,0 +1,14 @@
+.sectionBlock {
+  background: var(--color-brand-yellow-light);
+  padding: 1rem;
+  border-radius: 12px;
+  margin: 1rem 1rem var(--spacing-large);
+}
+
+.sectionBlock--gray {
+  background: var(--color-ui-gray-100);
+}
+
+.sectionBlock--noBackground {
+  background: none;
+}

@@ -1,0 +1,172 @@
+.nav {
+  background: var(--color-brand-white);
+  box-shadow: 0 6px 0 rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 0;
+}
+
+.menuContents {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+/* Keep .items centered even in the absence of a tickets button, without
+ * needing an empty div or changing the fact that .items left-align if they
+ * wrap to multiple lines
+ */
+.menuContents.noTickets::after {
+  content: '';
+}
+
+.logo {
+  width: auto;
+  height: 48px;
+}
+
+.items {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.menuButtonWrapper,
+.ticketItem {
+  display: none;
+}
+
+.link {
+  color: var(--color-brand-black);
+  display: block;
+  margin: 0 10px;
+  text-decoration: none;
+  font: var(--font-ui-sm-medium);
+  letter-spacing: var(--letter-spacing-ui-sm);
+}
+
+.link:hover,
+.link:focus {
+  text-decoration: underline;
+}
+
+@media not all and (--medium-up) {
+  .nav {
+    background: var(--color-brand-yellow-light);
+    box-shadow: none;
+  }
+
+  .nav.onFrontPage {
+    /* Avoid GridWrapper taking up vertical space */
+    height: 0;
+  }
+
+  .menuButtonWrapper {
+    display: block;
+    text-align: center;
+    position: fixed;
+    bottom: 38px;
+    left: 0;
+    right: 0;
+    z-index: 1;
+  }
+
+  .menuButton {
+    display: inline-block;
+    padding: 18px 24px 18px 65px;
+    border-radius: 6px;
+    border: none;
+    font: var(--font-body-large-medium);
+    letter-spacing: var(--letter-spacing-body-large);
+    background-color: var(--color-brand-yellow);
+    background-image: url('../../images/menu.svg');
+    background-repeat: no-repeat;
+    background-position: 24px 22px;
+  }
+
+  .menuButton.menuOpen {
+    align-self: center;
+  }
+
+  .menuButton.menuOpen {
+    background-image: url('../../images/close.svg');
+  }
+
+  .menuButton:active {
+    background-color: var(--color-brand-yellow-light);
+  }
+
+  .menuContents {
+    justify-content: center;
+    padding: 48px 0 40px;
+  }
+
+  .items {
+    display: block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--color-brand-orange);
+    padding: 24px var(--grid-half-gutter) 112px;
+    overflow: auto;
+  }
+
+  .items.menuClosed {
+    display: none;
+  }
+
+  .homeLink.onFrontPage,
+  .ticketButton {
+    display: none;
+  }
+
+  .ticketItem {
+    display: list-item;
+  }
+
+  .link {
+    font: var(--font-display-base);
+    letter-spacing: -0.01em;
+    display: inline-block; /* 'block' would make blank space be clickable */
+    margin: 0 0 8px;
+    animation: slideIn 0.5s cubic-bezier(0.25, 0.92, 0.37, 1) both;
+  }
+}
+
+@media (--medium-up) {
+  .link.current {
+    text-decoration: underline;
+  }
+}
+
+@media (--large-up) {
+  .menuContents {
+    padding: 24px 0;
+  }
+
+  .link {
+    margin: 0 12px;
+    font: var(--font-body-base-medium);
+    letter-spacing: var(--letter-spacing-body-base);
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    visibility: hidden;
+    transform: translateY(75%);
+  }
+
+  1% {
+    visibility: visible;
+  }
+
+  100% {
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
